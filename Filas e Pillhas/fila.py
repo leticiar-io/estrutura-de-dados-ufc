@@ -37,7 +37,7 @@ class Fila:
         for id, nome, valor_conta, credito_disponivel in clientes_iniciais:
             self.enfileirar(id, nome, valor_conta, credito_disponivel)
 
-    def enfileirar(self, numero_conta, nome, valor_conta, credito_disponivel):
+    def enfileirar(self, numero_conta, nome, valor_conta, credito_disponivel): # Adicionar cliente
         novo_cliente = Cliente(numero_conta, nome, valor_conta, credito_disponivel)
         if not self.fim: # 
             self.inicio = self.fim = novo_cliente
@@ -46,7 +46,7 @@ class Fila:
             self.fim = novo_cliente
         self.tamanho += 1
 
-    def desenfileirar(self):
+    def desenfileirar(self): # Remover cliente
         if not self.inicio:
             print("Fila vazia, não há clientes para remover.")
             return None
